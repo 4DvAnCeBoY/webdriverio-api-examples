@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import NavigationMenu from '../pages/NavigationMenu';
 import CheckboxesPage from '../pages/Checkboxes';
 
-describe('Add command test', () => {
+describe('Checkboxes test', () => {
     it('Checkboxes test', () => {
         NavigationMenu.loadNavigationMenu();
         NavigationMenu.clickCheckboxesPage();
