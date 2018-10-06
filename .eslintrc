@@ -1,8 +1,8 @@
-module.exports = {
-  "extends": "airbnb",
+{
+  "extends": "airbnb/base",
   "rules": {
-    "indent": 0,
-    "func-names": "off",
+    "indent": ["error", 4],
+    "func-names": "off"
   },
   "plugins": ["webdriverio"],
   "env": {

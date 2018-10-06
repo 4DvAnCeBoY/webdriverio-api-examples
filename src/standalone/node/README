@@ -1,6 +1,0 @@
-All tests in this folder are executed using the node command.
-
-./node_modules/.bin/mocha standalone/mocha/StandaloneWithMocha.spec.js
-
-Note you must start the selenium standalone server in order to run the tests. If you are using git bash, run bash startserver.bash
-otherwise port this script to your operating system.

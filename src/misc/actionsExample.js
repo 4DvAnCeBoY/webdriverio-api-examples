@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert as a } from 'chai';
 import NavigationMenu from '../pages/NavigationMenu';
 import CheckboxesPage from '../pages/Checkboxes';
 
@@ -17,24 +17,24 @@ describe('Add command test', () => {
     it('Checkboxes test', () => {
         NavigationMenu.loadNavigationMenu();
         NavigationMenu.clickCheckboxesPage();
-        assert.equal(CheckboxesPage.getPageHeader(), 'Checkboxes');
-        assert.isNotTrue(CheckboxesPage.checkboxOne.isSelected());
-        assert.isTrue(CheckboxesPage.checkboxTwo.isSelected());
+        a.equal(CheckboxesPage.getPageHeader(), 'Checkboxes');
+        a.isNotTrue(CheckboxesPage.checkboxOne.isSelected());
+        a.isTrue(CheckboxesPage.checkboxTwo.isSelected());
 
-        moveTo(CheckboxesPage.checkboxOne);
-
-        CheckboxesPage.checkboxOne.click();
-        CheckboxesPage.checkboxTwo.click();
-        assert.equal(CheckboxesPage.checkboxOne.isSelected(), true);
-        assert.equal(CheckboxesPage.checkboxTwo.isSelected(), false);
-
-        CheckboxesPage.checkboxOne.click();
-        assert.equal(CheckboxesPage.checkboxOne.isSelected(), false);
-        assert.equal(CheckboxesPage.checkboxTwo.isSelected(), false);
+        // moveTo(CheckboxesPage.checkboxOne);
 
         CheckboxesPage.checkboxOne.click();
         CheckboxesPage.checkboxTwo.click();
-        assert.equal(CheckboxesPage.checkboxOne.isSelected(), true);
-        assert.equal(CheckboxesPage.checkboxTwo.isSelected(), true);
+        a.equal(CheckboxesPage.checkboxOne.isSelected(), true);
+        a.equal(CheckboxesPage.checkboxTwo.isSelected(), false);
+
+        CheckboxesPage.checkboxOne.click();
+        a.equal(CheckboxesPage.checkboxOne.isSelected(), false);
+        a.equal(CheckboxesPage.checkboxTwo.isSelected(), false);
+
+        CheckboxesPage.checkboxOne.click();
+        CheckboxesPage.checkboxTwo.click();
+        a.equal(CheckboxesPage.checkboxOne.isSelected(), true);
+        a.equal(CheckboxesPage.checkboxTwo.isSelected(), true);
     });
 });
