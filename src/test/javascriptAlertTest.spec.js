@@ -22,4 +22,3 @@ describe('JavaScript Alert test', () => {
         assert.equal(JavaScriptAlertsPage.getResult(), 'You clicked: Ok');
     });
 });
-
