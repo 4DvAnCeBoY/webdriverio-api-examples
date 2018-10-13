@@ -19,7 +19,7 @@ class NavigationMenu {
         browser.waitForVisible(this.screenLocators.login);
     }
 
-    clickCheckboxesPage() {
+    loadCheckboxesPage() {
         browser.url(this.checkboxesUrl);
         browser.waitForVisible(this.screenLocators.checkboxes);
     }
