@@ -16,7 +16,6 @@ describe('JavaScript Alert test', () => {
     });
 
     it('JavaScript confirm test', () => {
-        assert.equal(JavaScriptAlertsPage.getPageHeader(), 'JavaScript Alerts');
         JavaScriptAlertsPage.clickJSConfirmButton();
         JavaScriptAlertsPage.closeAlert();
         assert.equal(JavaScriptAlertsPage.getResult(), 'You clicked: Ok');
