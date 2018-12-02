@@ -145,7 +145,6 @@ exports.config = {
     mochaOpts: {
         compilers: ['js:babel-register'],
         timeout: 999999,
-        grep: 'yay',
     },
     //
     // =====
