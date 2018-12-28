@@ -1,13 +1,15 @@
 {
-  "extends": "airbnb/base",
+  "extends": [
+      "airbnb/base",
+      "plugin:wdio/recommended"
+  ],
   "rules": {
     "indent": ["error", 4],
     "func-names": "off",
     "max-len": ["error", { "code": 122 }]
   },
-  "plugins": ["webdriverio"],
+  "plugins": ["wdio"],
   "env": {
-    "webdriverio/wdio": true,
     "mocha": true,
     "browser": true
   }

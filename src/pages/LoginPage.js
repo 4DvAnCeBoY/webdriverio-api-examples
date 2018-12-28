@@ -40,7 +40,7 @@ class LoginPage extends BasePage {
         const securedScreenPresenceLocator = 'a.radius';
         this.enterLoginInformation(usernameValue, passwordValue);
         this.clickSubmitButton();
-        browser.waitForVisible(securedScreenPresenceLocator);
+        browser.$(securedScreenPresenceLocator).waitForDisplayed();
     }
 }
 

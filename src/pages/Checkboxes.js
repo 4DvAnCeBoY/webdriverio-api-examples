@@ -7,11 +7,11 @@ class CheckboxesPage extends BasePage {
     }
 
     get checkboxOne() {
-        return browser.$$(this.checkboxes)[0];
+        return $$(this.checkboxes)[0];
     }
 
     get checkboxTwo() {
-        return browser.$$(this.checkboxes)[1];
+        return $$(this.checkboxes)[1];
     }
 }
 module.exports = new CheckboxesPage();

@@ -22,12 +22,10 @@ class BasePage {
     }
 
     getPageHeader() {
-        const h2Selector = 'div.example h2';
-        const h3Selector = 'div.example h3';
-        if (browser.$$(this.baseSelectors.h2Selector).length > 0) {
-            return $(h2Selector).getText();
+        if ($$(this.baseSelectors.h2Selector).length > 0) {
+            return $(this.baseSelectors.h2Selector).getText();
         }
-        return browser.$(h3Selector).getText();
+        return $(this.baseSelectors.h3Selector).getText();
     }
 
     getPageSubHeader() {
@@ -44,7 +42,7 @@ class BasePage {
 
     closePageMessage() {
         this.closeButton.click();
-        browser.waitUntil(() => !this.closeButton.isVisible());
+        this.closeButton.waitForDisplayed(true);
     }
 }
 
