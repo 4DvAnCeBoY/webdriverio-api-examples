@@ -13,7 +13,7 @@ class SecuredPage extends BasePage {
 
     clickLogout() {
         this.logoutButton.click();
-        browser.waitForVisible(screenPresenceLocators.login);
+        browser.$(screenPresenceLocators.login).waitForDisplayed();
     }
 }
 module.exports = new SecuredPage();

@@ -32,7 +32,7 @@ class JavaScriptAlertsPage extends BasePage {
     }
 
     closeAlert() { // eslint-disable-line class-methods-use-this
-        browser.alertAccept();
+        browser.acceptAlert();
     }
 }
 module.exports = new JavaScriptAlertsPage();

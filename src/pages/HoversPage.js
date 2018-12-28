@@ -15,8 +15,10 @@ class HoversPage extends BasePage {
 
     hoverOverImage(position) {
         const figure = browser.$$(this.figureLocator)[position];
-        figure.moveToObject('img');
-        browser.waitForVisible(this.captionsLocator);
+        const hoverImg = figure.$('img');
+        hoverImg.moveTo();
+        browser.pause(500);
+        browser.waitUntil(() => browser.$$(this.captionsLocator).length > 0);
     }
 
     clickViewProfile(position) {
@@ -24,12 +26,12 @@ class HoversPage extends BasePage {
         const captionSection = browser.$$(this.captionsLocator)[position];
         const link = captionSection.$('a');
         link.click();
-        browser.waitForVisible(screenPresenceLocators.userprofile);
+        browser.$(screenPresenceLocators.userprofile).waitForDisplayed();
     }
 
     returnToHoversPage() {
         browser.back();
-        browser.waitForVisible(this.screenPresenceLocators.hovers);
+        browser.$(this.screenPresenceLocators.hovers).waitForDisplayed();
     }
 
     getUserName(position) {

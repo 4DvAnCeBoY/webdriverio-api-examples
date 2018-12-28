@@ -16,22 +16,22 @@ class NavigationMenu {
 
     clickFormAuthentication() {
         browser.url(this.loginUrl);
-        browser.waitForVisible(this.screenLocators.login);
+        browser.$(this.screenLocators.login).waitForDisplayed();
     }
 
     loadCheckboxesPage() {
         browser.url(this.checkboxesUrl);
-        browser.waitForVisible(this.screenLocators.checkboxes);
+        browser.$(this.screenLocators.checkboxes).waitForDisplayed();
     }
 
     clickHoversPage() {
         browser.url(this.hoversUrl);
-        browser.waitForVisible(this.screenLocators.hovers);
+        browser.$(this.screenLocators.hovers).waitForDisplayed();
     }
 
     clickJavaScriptAlertsPage() {
         browser.url(this.javascriptAlertsUrl);
-        browser.waitForVisible(this.screenLocators.javascriptAlertPage);
+        browser.$(this.screenLocators.javascriptAlertPage).waitForDisplayed();
     }
 }
 
