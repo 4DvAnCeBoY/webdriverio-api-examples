@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio wdio.conf.js",
-    "test-headless": "wdio wdio.headless.js",
-    "lint": "eslint --fix src/pages/**/*.js src/test/**/*.js src/standalone/**/*.js",
+    "test-headless": "wdio wdio.headless.conf.js",
+    "lint": "eslint --fix src/pages/**/*.js src/test/**/*.js",
     "upgradecheck": "ncu",
-    "upgradeDependencies": "ncu -u"
+    "upgradeDependencies": "ncu -u",
+    "moveJsonFiles": "copyfiles -u 1 src/selectors/*.json src/config/*.json lib",
+    "build": "npm run lint && rimraf lib && npm run moveJsonFiles && babel src --out-dir lib"
   },
   "pre-commit": [
     "lint",
