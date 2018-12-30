@@ -7,3 +7,4 @@ build
 debug.log
 package-lock.json
 .vscode
+lib
