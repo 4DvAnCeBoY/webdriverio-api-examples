@@ -14,9 +14,9 @@ This project was created to serve as a reference to others interested in ES6 web
 3) ```npm run build```
 4) ```npm run test```.
 
-To execute a standalone spec run  ``` .\node_modules\.bin\wdio --mochaOpts.require 'babel-register' --spec <path to test> .\wdio.conf.js```
+To execute a standalone spec run  ``` .\node_modules\.bin\wdio --mochaOpts.require 'babel-register' --mochaOpts.timeout 9999999 --spec <path to test> .\wdio.conf.js```
 
 Example:
-```.\node_modules\.bin\wdio --mochaOpts.require 'babel-register' --spec .\src\test\hoversTest.spec.js .\wdio.conf.js```
+```.\node_modules\.bin\wdio --mochaOpts.require 'babel-register' --mochaOpts.timeout 9999999 --spec .\src\test\hoversTest.spec.js .\wdio.conf.js```
 
 When executing a standalone spec ```--mochaOpts.require 'babel-register'``` is required because I removed mochaOpts from wdio.conf file. This was done based on a recommendation from the mocha wiki [compilers deprecation](https://github.com/mochajs/mocha/wiki/compilers-deprecation) page.
