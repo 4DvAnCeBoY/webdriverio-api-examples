@@ -14,6 +14,7 @@ This project was created to serve as a reference to others interested in ES6 web
 3) ```npm run build```
 4) ```npm run test```.
 
+# Run standalone spec
 To execute a standalone spec run  ``` .\node_modules\.bin\wdio --mochaOpts.require 'babel-register' --mochaOpts.timeout 9999999 --spec <path to test> .\wdio.conf.js```
 
 Example:
