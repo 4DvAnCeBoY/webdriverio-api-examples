@@ -65,7 +65,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error
-    logLevel: 'error',
+    logLevel: 'info',
     logDir: './logs',
     //
     // Warns when a deprecated command is used
