@@ -1,4 +1,5 @@
 const fs = require('fs');
+const UpgradeService = require('./src/services/UpgradeService');
 
 /* eslint-disable */
 exports.config = {
@@ -64,7 +65,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error
-    logLevel: 'info',
+    logLevel: 'error',
     logDir: './logs',
     //
     // Warns when a deprecated command is used
@@ -112,7 +113,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    services: ['selenium-standalone', UpgradeService],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/docs/frameworks.html
@@ -131,7 +132,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000,
+        timeout: 99999999,
         require: 'babel-register' 
     },
     //
@@ -170,6 +171,12 @@ exports.config = {
      */
     before: function (capabilities, specs) {
         browser.maximizeWindow();
+        browser.addCommand("getUrlAndTitle", async function() {
+            return {
+                url: await this.getCurrentUrl(),
+                title: await this.getTitle()
+            };
+        });
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -224,8 +231,20 @@ exports.config = {
      * @param {Number} result 0 - command success, 1 - command error
      * @param {Object} error error object if any
      */
-    // afterCommand: function (commandName, args, result, error) {
-    // },
+    afterCommand: function (commandName, args, result, error) {
+        /*
+        if (commandName === '$') {
+            console.log('-------------------------------------------');
+            console.log(`COMMAND NAME: ${commandName}`);
+            // console.log('ARGS:');
+            // console.log(args);
+            console.log('RESULT:');
+            // console.log(result);
+            console.log(result.addCommand('sht', () => { return 'ssss'; }));
+            // console.log(`ERROR: ${error}`);
+        }
+        */
+    },
     /**
      * Gets executed after all tests are done. You still have access to all global variables from
      * the test.

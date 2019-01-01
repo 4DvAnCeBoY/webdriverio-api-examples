@@ -26,7 +26,8 @@ class NavigationMenu {
 
     clickHoversPage() {
         browser.url(this.hoversUrl);
-        browser.waitForVisible(this.screenLocators.hovers);
+        // browser.waitForVisible(this.screenLocators.hovers);
+        browser.$(this.screenLocators.hovers).waitForDisplayed();
     }
 
     clickJavaScriptAlertsPage() {
